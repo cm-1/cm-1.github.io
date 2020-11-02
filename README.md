@@ -1,18 +1,7 @@
-# test
-Testing stuffz
+# Iframe Test
+Leaving this here as a reminder to myself that iframe embeddings do work here. It won't show up in the github.com view, but if you actually visit [https://cm-1.github.io](https://cm-1.github.io), you can play the video.
 
-Here is a description of things.
-
-Now for a video:
-
-<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+<iframe width="420" height="345" src="https://www.youtube.com/embed/3EktRV4mYPw?controls=0">
 </iframe>
 
-Some more text. **Some more MD formatting**. [A Link](https://www.xkcd.com).
-
-## Another section
-
-Now, a list:
-
- * Item 1
- * Item 2
+Some more text.
