@@ -1,0 +1,1 @@
+Supervisor's phone: Galaxy Note 20 Ultra 5G API 30

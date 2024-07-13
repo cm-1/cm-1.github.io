@@ -1,0 +1,21 @@
+Should be able to test the AR without macbook. Seems to be possible with "Reality Composer" app:
+
+ * https://apps.apple.com/ca/app/reality-composer/id1462358802
+ 
+Here is how to get a scan with Reality Composer: https://stackoverflow.com/questions/68192037/is-it-possible-to-use-reality-composer-for-detecting-3d-assets-in-the-real-world
+
+Then, for testing a custom 3D overlay, need to make a uszd file. Should be possible from a GLTF with https://github.com/google/usd_from_gltf
+Which in turn needs https://github.com/PixarAnimationStudios/USD
+
+If that doesn't work, can follow the instructions at https://unix.stackexchange.com/questions/624773/use-apples-usdzconvert-on-a-linux-machine,
+which relies on download from https://developer.apple.com/augmented-reality/tools/
+which seems to need 7-zip or something to open if not on MacOS.
+
+In any event, may want a transparent gltf: https://discourse.threejs.org/t/how-do-i-use-transparency-in-gltf-exports/23680
+
+If Reality Composer doesn't work, will need to use the code at https://developer.apple.com/documentation/arkit/content_anchors/scanning_and_detecting_3d_objects
+Still need to read through: https://developer.apple.com/documentation/arkit/arreferenceobject
+If Macbook doesn't work, maybe have to try a VM: https://osxdaily.com/2020/07/20/how-convert-macos-installer-iso/
+
+If have time, try out https://developer.apple.com/documentation/arkit/content_anchors/visualizing_and_interacting_with_a_reconstructed_scene
+
