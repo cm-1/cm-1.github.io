@@ -19,3 +19,11 @@ What you can then do is to edit `<your project dir>/.git/info/exclude` file ("ex
 This comes from https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files.
 The link also mentions a global computer-wide option, but that sounds more error-prone and more likely to be unnecessary.
 
+# "How to get just one file from another branch"
+
+https://stackoverflow.com/questions/2364147/how-to-get-just-one-file-from-another-branch
+
+```
+git switch dest_branch
+git restore --source source_branch -- thing.txt
+```
