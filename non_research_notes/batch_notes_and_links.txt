@@ -1,0 +1,7 @@
+https://www.tutorialspoint.com/batch_script/batch_script_commands.htm
+
+https://stackoverflow.com/questions/44588260/how-does-the-echo-command-works-in-batch-programming
+https://stackoverflow.com/questions/47425520/activate-virtualenv-and-run-py-script-from-bat
+https://stackoverflow.com/questions/324539/how-can-i-run-a-program-from-a-batch-file-without-leaving-the-console-open-after
+https://stackoverflow.com/questions/4165387/create-folder-with-batch-but-only-if-it-doesnt-already-exist
+
