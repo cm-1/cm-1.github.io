@@ -19,6 +19,40 @@ Some helpful resources for learning about Cython:
 
 - https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html
 
+## Step-by-step debugging
+I had the error `realloc(): invalid next size` causing a crash in some Cython code that scikit-learn was calling, which meant that I couldn't use "normal" step-by-step Python debugging. The nature of the code also made printf statements implausible as there'd just be too many. So I tried to use cygdb to debug it, [as described in the Cython docs](https://cython.readthedocs.io/en/latest/src/userguide/debugging.html) but was facing issues. I installed `python3-debug` (the Fedora equivalent of python-dbg I guess) and ran `python3-debug setup.py build_ext --inplace`, then ran `cygdb --build-dir ./dir_containing_pyx_code -- --args python3-debug code_calling_sklearn.py` which started gdb, then ran `start`, but wasn't able to set any breakpoints for either my python code or Cython code.
+
+Copilot gave some suggestions that half-worked, and some of them may have been unnecessary, but they at least let me get a backtrace printed.
+
+First, it suggested to build my .pyx in the following manner:
+```
+export CFLAGS="-g -O0 -fno-omit-frame-pointer"
+export CXXFLAGS="$CFLAGS"
+export LDFLAGS="-g"
+python3-debug setup.py build_ext --inplace
+```
+
+It said I should then see my symbols when I run:
+```
+readelf -s ./*.so | head
+nm -D ./*.so | head
+```
+but I did not see any function names in here, just the main "module" name, so maybe the above doesn't do much/anything.
+
+It then suggested that I start cygdb as I had before and run the following:
+```
+(gdb) start
+(gdb) break malloc_printerr
+(gdb) break __libc_message
+(gdb) break abort
+(gdb) run
+```
+While the `__libc_message` breakpoint didn't work, the other two did, and by doing this, I was able to then run `(gdb) backtrace` and get my backtrace; it was long, so I had to scroll through with Shift+PageUp. However, other commands, like printing "locals", did not seem to work; maybe this was because the crash, while _caused_ by my Cython code, was not _during_ my Cython code but was instead in the scikit-learn code, so maybe it didn't have debug symbols.
+
+I also was still getting a `warning: .cygdbinit: No such file or directory (gdb)` while trying the above, though I'm not sure how much that impacted functionality.
+
+While I'm not sure that using `python3-debug` instead of `python` did much/anything above, I wanted to use it to be safe, and I also ended up working in a VM and doing the necessary installs, pip installs, etc. in the "main" python environment rather than a virtual environment. While I haven't tested whether it would work with a virutal environment, one thing I know is that, with a virutal environment made with `venv`, no `activate_this.py` file is created, and cygdb expects this file to exist. So you would have to use `virtualenv` or something instead.
+
 ## Copies and `__cinit__`
 For custom implementations of `__copy__` and `__deepcopy__` in Python, it may be desirable to avoid the class constructor when creating a new object and instead just create it via `__new__` so that you can handle the logic yourself. E.g., if your constructor makes a copy of a list you pass in as a paramter, meaning the object copy made via constructor wouldn't be a shallow copy anymore. However, if you define `__cinit__`, then there is no way to create an object where `__cinit__` does not get called, which can frustrate this attempt.
 
