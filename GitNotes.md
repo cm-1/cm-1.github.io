@@ -1,3 +1,10 @@
+# Shallower Clones
+As seen on [GitHub's "Get up to speed with partial clone and shallow clone" page](https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/), you can do a clone of a project in such a way where not all "blobs" are downloaded upfront, but instead on-demand, creating a much smaller/faster initial download. From their description, the variant I'd usually want is probably:
+
+- `git clone --filter=blob:none <url>`
+
+They call this a "blobless clone" and recommend it for if your use "spans multiple builds", which is usually the case for me.
+
 # Git Stash
 If "git stash" is failing with an error message mentioning a file being "not uptodate", a possible workaround is staging/adding all files and *then* stashing.
 
