@@ -1,0 +1,34 @@
+mathcha.io
+
+GeoGebra
+
+Inkscape
+
+Tikzmaker	(reddit,
+	Web only, pictures!, shapes, labels, grid/snap for rect but not really for circles.
+Tikzit		(reddit, gh-a, gh-1.2k
+	Install only, very similar looking to Tikzmaker but no pictures
+tikzcd		(reddit, gh-2k
+	Web and install, Grid only, no shapes, fewer label options
+quiver		(reddit, gh-a, 
+	Web, similar to tikzcd but more options for arrows/labels (just not nodes)
+freetikz	(ste3
+	Converts hand-drawn diagram to string diagram
+tikzedt		(ste0-4, gh-23)
+	Seems like it has a fair bit of features but has few stars and hasn't been maintained in ages
+qtikz/ktikz	(ste0-3, gh-386
+	No dragging: just a fast live preview...
+
+gh-a: https://github.com/xiaohanyu/awesome-tikz
+reddit: https://old.reddit.com/r/LaTeX/comments/1hrg0ny/making_tikz_diagrams_with_chatgpt/m4xr8mq/
+ste0: https://tex.stackexchange.com/questions/80418/list-of-tikz-editor
+ste1: https://tex.stackexchange.com/questions/24235/what-you-see-is-what-you-get-wysiwyg-for-pgf-tikz
+ste2: https://tex.stackexchange.com/questions/26972/what-gui-applications-are-there-to-assist-in-generating-graphics-for-tex
+ste3: https://tex.stackexchange.com/questions/84890/is-there-an-online-diagram-graphical-editor-that-produces-the-corresponding-late
+NEED TO FINISH GOING THROUGH STE1-3!
+
+FreeTikz: https://homepages.inf.ed.ac.uk/cheunen/freetikz/
+More on FreeTikz: https://golem.ph.utexas.edu/category/2018/01/freetikz.html
+
+https://tikz.dev/
+
