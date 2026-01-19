@@ -2,7 +2,13 @@ mathcha.io
 
 GeoGebra
 
-Inkscape
+Dia (Gnome)
+	Sample output, as seen at https://tex.stackexchange.com/questions/161251/text-positions-in-imported-dia-flow-charts,
+	seems very "raw" and difficult to edit. E.g., no "rectangle" or "diamond" nodes for creating the node outlines,
+	from what I can tell, and instead hardcoding coordinates?
+
+Inkscape?
+	Requires unofficial extension.
 
 Tikzmaker	(reddit,
 	Web only, pictures!, shapes, labels, grid/snap for rect but not really for circles.
@@ -18,6 +24,10 @@ tikzedt		(ste0-4, gh-23)
 	Seems like it has a fair bit of features but has few stars and hasn't been maintained in ages
 qtikz/ktikz	(ste0-3, gh-386
 	No dragging: just a fast live preview...
+Flowframtk	(ste1
+	Very few stars/mentions
+Ipe editor	(gh-233
+	No longer maintained (since 2015) but looks fairly capable?
 
 gh-a: https://github.com/xiaohanyu/awesome-tikz
 reddit: https://old.reddit.com/r/LaTeX/comments/1hrg0ny/making_tikz_diagrams_with_chatgpt/m4xr8mq/
@@ -25,10 +35,23 @@ ste0: https://tex.stackexchange.com/questions/80418/list-of-tikz-editor
 ste1: https://tex.stackexchange.com/questions/24235/what-you-see-is-what-you-get-wysiwyg-for-pgf-tikz
 ste2: https://tex.stackexchange.com/questions/26972/what-gui-applications-are-there-to-assist-in-generating-graphics-for-tex
 ste3: https://tex.stackexchange.com/questions/84890/is-there-an-online-diagram-graphical-editor-that-produces-the-corresponding-late
-NEED TO FINISH GOING THROUGH STE1-3!
+NEED TO FINISH GOING THROUGH STE2-3 and awesome-tikz GitHub!
 
 FreeTikz: https://homepages.inf.ed.ac.uk/cheunen/freetikz/
 More on FreeTikz: https://golem.ph.utexas.edu/category/2018/01/freetikz.html
 
 https://tikz.dev/
 
+# Non-Editor Alternatives
+
+The following aren't editors but *might* make *some* tasks easier?
+
+Asymptote
+	Not tikz, but still a LaTeX thing, and might be better for 3D graphics. Feels more like programming; syntax less alien than tikz's.
+
+PSTricks
+	Seems there might be issues using it at the same as tikz (though there's a workaround).
+	Not sure there are huge benefits that make it worth considering PSTricks if I already *sorta* know tikz.
+
+MetaPost
+	Another non-tikz LaTeX option.
