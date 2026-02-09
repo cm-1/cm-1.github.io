@@ -64,7 +64,8 @@ Is there a good way to do that?
 The answers to [the StackOverflow question "How to override the copy/deepcopy operations for a Python object?"](https://stackoverflow.com/questions/1500718/how-to-override-the-copy-deepcopy-operations-for-a-python-object) – asked by user Brent Writes Code (159658/brent-writes-code) on 2009-09-30 – contain some ideas and some hacks, albeit the hacks can have some drawbacks. For example the suggestion by user Peter (851699/peter) written 2014-07-07 suggests to temporarily set the overridden function to None, get a copy that uses the default copying, and then restore the function to something other than None after. Except… then the new copy will just have None as its function and won't have the overriden behaviour if someone tries to make a copy of _it_! Well, then modify the copy to add it back in? Except that means it'll just get the original object's copying function….
 
 
-
+## Comparisons and Diffs
+Might want to check out the DeepDiff Python library: https://github.com/seperman/deepdiff
 
 # Library-Specific Notes
 ## IPython/Jupyter

@@ -44,3 +44,11 @@ Command looks like `bazel(isk) --output_base=<directory> build -c opt ...`
 
 - https://web.archive.org/web/20231123183352/https://www.tensorflow.org/install/source_windows
 - https://web.archive.org/web/20231119132155/https://www.tensorflow.org/lite/guide/build_cmake
+
+Bazel will make symlinks like "bazel-bin" and "bazel-out" in the project root directory. If you switch from, say, building Debug to building Release, these symlinks will change. This might be a bit inconvenient because some of the files like the CMakeLists.txt for the minimal TF Lite example use these symlinks and assume they point at the "correct" things.
+
+To change these symlinks on Windows, I referred to https://superuser.com/questions/444016/how-do-i-change-target-of-symlink-in-windows
+namely the `New-Item -Type SymbolicLink -Path <link path> -Target <target path> -Force` answer by user jitbit.
+
+
+When building TensorFlow with LLVM, the ABI is different than if you use MSVC. I tried to, therefore, also build the minimal TF Lite example, a CMake project, using LLVM but was facing difficulty. I think part of the problem is that building with LLVM with the Visual Studio generator is possible on Windows but Visual Studio assumes that you have installed LLVM via the Visual Studio installer. When I installed LLVM separately, I was facing issues. To do that install, I guess I can follow the instructions at https://superuser.com/questions/1543078/how-to-add-llvm-to-visual-studio-2019? I had this link open in my browser for a long time and I don't remember exactly why I kept this particular link open rather than other LLVM ones so this is the best guess I have as to what my reasoning was.
