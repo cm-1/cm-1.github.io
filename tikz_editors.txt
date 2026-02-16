@@ -26,10 +26,14 @@ qtikz/ktikz	(ste0-3, gh-386
 	No dragging: just a fast live preview...
 Flowframtk	(ste1
 	Very few stars/mentions
-Ipe editor	(gh-233
+Ipe editor	(gh-237, ste2
 	No longer maintained (since 2015) but looks fairly capable?
+		EXCEPT the GitHub shows activity quite recently? Not sure why I wrote the previous comment...
+LaTeXDraw	(ste2-3
+	Generates PSTricks (not tikz). Java. Last maintained 2020
 
-gh-a: https://github.com/xiaohanyu/awesome-tikz
+gh-a: htt
+ps://github.com/xiaohanyu/awesome-tikz
 reddit: https://old.reddit.com/r/LaTeX/comments/1hrg0ny/making_tikz_diagrams_with_chatgpt/m4xr8mq/
 ste0: https://tex.stackexchange.com/questions/80418/list-of-tikz-editor
 ste1: https://tex.stackexchange.com/questions/24235/what-you-see-is-what-you-get-wysiwyg-for-pgf-tikz
