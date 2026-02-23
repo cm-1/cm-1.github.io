@@ -12,7 +12,7 @@ Inkscape?
 
 Tikzmaker	(reddit,
 	Web only, pictures!, shapes, labels, grid/snap for rect but not really for circles.
-Tikzit		(reddit, gh-a, gh-1.2k
+Tikzit		(reddit, gh-a, gh-1.2k, ste2
 	Install only, very similar looking to Tikzmaker but no pictures
 tikzcd		(reddit, gh-2k
 	Web and install, Grid only, no shapes, fewer label options
